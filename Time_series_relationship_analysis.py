@@ -1,11 +1,13 @@
+import seaborn as sns
 import matplotlib.pyplot as plt
+import numpy as np
 
-# Ваши данные о ценах акций
-stock_prices_company_a = [100, 110, 95, 105, 120]
-stock_prices_company_b = [90, 100, 85, 95, 110]
+# Ваш код для получения данных о ценах акций
+# Пример: случайные данные для иллюстрации
+stock_prices = np.random.rand(5, 10)
 
-plt.scatter(stock_prices_company_a, stock_prices_company_b, color='green')
-plt.title('Диаграмма рассеяния: Взаимосвязь цен акций двух компаний')
-plt.xlabel('Цены акций Компания A')
-plt.ylabel('Цены акций Компания B')
+sns.heatmap(stock_prices.T, cmap='YlGnBu', linewidths=.5)
+plt.title('Тепловая карта цен акций')
+plt.xlabel('Временные периоды')
+plt.ylabel('Компании')
 plt.show()
